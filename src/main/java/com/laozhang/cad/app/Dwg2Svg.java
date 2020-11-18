@@ -7,9 +7,9 @@ import com.laozhang.cad.svg.content.impl.PictFourCornerMidSVGMaker;
 public class Dwg2Svg {
 
     public static void main(String[] args) throws Exception {
-        String sourcePath = "C:\\Users\\admin\\Desktop\\now\\drawing\\total_dwg\\WM1001-b01-027触摸屏挂件2.dwg";
-        String targetPath = "D:\\IDEA\\cad\\17.dwg.svg";
-        String pictPath = "D:\\IDEA\\cad\\202003230930.jpg";
+        String sourcePath = "E:\\doc\\s21\\二次图\\二次图\\1AA.dwg";
+        String targetPath = "F:\\test\\dwg2svg\\1AA.dwg.svg";
+//        String pictPath = "D:\\IDEA\\cad\\202003230930.jpg";
 
         //DWG2SVGConverter converter = new DWG2SVGConverter(sourcePath,targetPath);
         DWG2SVGConverter converter = new DWG2SVGConverter(sourcePath,targetPath, Resolution.RESOLUTION_1920_1080);
@@ -20,7 +20,7 @@ public class Dwg2Svg {
 //        maker.slopeOffset(100);
         //PictTileSVGMaker maker = new PictTileSVGMaker(pictPath, 400, 300);
         //PictAddSVGMaker maker = new PictAddSVGMaker(pictPath, 900, 50, 60, 30);
-        PictFourCornerMidSVGMaker maker = new PictFourCornerMidSVGMaker(pictPath,60, 30);
-        converter.buildSvgWithMaker(maker);
+//        PictFourCornerMidSVGMaker maker = new PictFourCornerMidSVGMaker(pictPath,60, 30);
+        converter.buildSvgWithMaker();
     }
 }

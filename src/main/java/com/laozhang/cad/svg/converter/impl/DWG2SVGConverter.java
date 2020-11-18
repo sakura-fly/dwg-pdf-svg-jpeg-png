@@ -50,7 +50,15 @@ public class DWG2SVGConverter extends AbstractSVGConverter {
     final public void buildSvgWithMaker(AbstractNormalSVGMaker maker) {
         try {
             Document doc = getSvgDocument();
-            maker.add(doc.getRootElement().addElement("g"),this.resolution,this.drawing);
+//            maker.add(doc.getRootElement().addElement("g"),this.resolution,this.drawing);
+            saveSvg(doc);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+    }
+    final public void buildSvgWithMaker() {
+        try {
+            Document doc = getSvgDocument();
             saveSvg(doc);
         }catch (Exception ex){
             ex.printStackTrace();

@@ -1,7 +1,7 @@
 package pdf;
 
-import com.laozhang.cad.pdf.util.PdfUtil;
-import com.laozhang.cad.pdf.wm.*;
+import com.ss.cad.pdf.util.PdfUtil;
+import com.ss.cad.pdf.wm.PDFShortSidePictWaterMark;
 
 public class Run {
     public static void main(String[] args) {

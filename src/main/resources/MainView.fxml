@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.ss.cad.controller.MainController"
+            prefHeight="400.0" prefWidth="600.0">
+    <HBox>
+        <Button fx:id="srcBtn" onMouseClicked="#openSrc" text="选择源文件目录"/>
+        <Label fx:id="srcStr"/>
+    </HBox>
+    <HBox>
+        <Button fx:id="outBtn" onMouseClicked="#openOut" text="选择输出目录"/>
+        <Label fx:id="outStr"/>
+    </HBox>
+    <Button text="转换" fx:id="doIt" onMouseClicked="#doIt"/>
+    <TextArea fx:id="resultText"/>
+</VBox>

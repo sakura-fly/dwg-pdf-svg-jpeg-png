@@ -1,8 +1,8 @@
 package pdf;
 
-import com.laozhang.cad.pdf.WaterMark;
-import com.laozhang.cad.pdf.util.PdfUtil;
-import com.laozhang.cad.pdf.wm.PDFShortSidePictWaterMark;
+import com.ss.cad.pdf.WaterMark;
+import com.ss.cad.pdf.util.PdfUtil;
+import com.ss.cad.pdf.wm.PDFShortSidePictWaterMark;
 
 import java.io.File;
 import java.io.FileFilter;

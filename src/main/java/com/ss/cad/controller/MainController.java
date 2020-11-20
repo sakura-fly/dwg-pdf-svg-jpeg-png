@@ -55,7 +55,7 @@ public class MainController {
         }
         new Thread(() -> {
             for (File f : files) {
-                resultText.setText("开始转换" + f.getName());
+                resultText.setText(resultText.getText() + "\n开始转换" + f.getName());
                 DWG2SVGConverter converter = new DWG2SVGConverter(f.getAbsolutePath(),
                         outDir + File.separator + f.getName() + ".svg", Resolution.RESOLUTION_1920_1080);
                 converter.buildSvgWithMaker();

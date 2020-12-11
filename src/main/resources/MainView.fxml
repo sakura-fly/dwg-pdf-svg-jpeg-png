@@ -12,9 +12,14 @@
         <Label fx:id="srcStr"/>
     </HBox>
     <HBox>
+        <Button fx:id="srcFileBtn" onMouseClicked="#openFileSrc" text="选择源文件"/>
+        <Label fx:id="srcFileStr"/>
+    </HBox>
+    <HBox>
         <Button fx:id="outBtn" onMouseClicked="#openOut" text="选择输出目录"/>
         <Label fx:id="outStr"/>
     </HBox>
-    <Button text="转换" fx:id="doIt" onMouseClicked="#doIt"/>
+    <Button text="批量转换" fx:id="doIt" onMouseClicked="#doIt"/>
+    <Button text="单个转换" fx:id="doOne" onMouseClicked="#doOne"/>
     <TextArea fx:id="resultText"/>
 </VBox>

@@ -51,6 +51,15 @@ public class PDF2SVGConverter extends AbstractSVGConverter {
         }
     }
 
+    public void build() {
+        try {
+            org.dom4j.Document doc = getSvgDocument();
+            saveSvg(doc);
+        }catch (Exception ex){
+            ex.printStackTrace();
+        }
+    }
+
     private org.dom4j.Document getSvgDocument() throws Exception{
         SAXReader reader = new SAXReader();
         ByteArrayOutputStream bos = new ByteArrayOutputStream();

@@ -33,7 +33,7 @@ public class Dwg2Svg {
                 System.out.println(f.getName());
                 DWG2SVGConverter converter = new DWG2SVGConverter(f.getAbsolutePath(),
                         outDir + File.separator + f.getName() + ".svg", Resolution.RESOLUTION_1920_1080);
-                converter.buildSvgWithMaker();
+                converter.build();
             }
         }
     }

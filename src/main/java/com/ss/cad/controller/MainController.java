@@ -7,6 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -20,7 +21,11 @@ public class MainController {
     public Button doIt;
     public TextArea resultText;
     private final String baseDIr = System.getProperty("user.dir");
+    public Button srcFileBtn;
+    public Label srcFileStr;
+    public Button doOne;
     private File srcDir;
+    private File srcFile;
     private File outDir;
 
     public void openSrc(MouseEvent mouseEvent) {
@@ -41,6 +46,15 @@ public class MainController {
         outStr.setText(outDir.getAbsolutePath());
     }
 
+    public void openFileSrc(MouseEvent mouseEvent) {
+        FileChooser file = new FileChooser();
+        file.setTitle("选择源文件");
+        file.setInitialDirectory(new File(baseDIr));
+        Stage stage = (Stage) srcBtn.getScene().getWindow();
+        srcFile = file.showOpenDialog(stage);
+        srcFileStr.setText(srcFile.getAbsolutePath());
+    }
+
     public void doIt(MouseEvent mouseEvent) {
         File[] files = srcDir.listFiles(new FileFilter() {
             @Override
@@ -58,10 +72,20 @@ public class MainController {
                 resultText.setText(resultText.getText() + "\n开始转换" + f.getName());
                 DWG2SVGConverter converter = new DWG2SVGConverter(f.getAbsolutePath(),
                         outDir + File.separator + f.getName() + ".svg", Resolution.RESOLUTION_1920_1080);
-                converter.buildSvgWithMaker();
+                converter.build();
                 resultText.setText(resultText.getText() + "\n完成转换" + f.getName());
             }
             resultText.setText(resultText.getText() + "\n全部转换完成");
+        }).start();
+    }
+
+    public void doOne(MouseEvent mouseEvent) {
+        new Thread(() -> {
+            resultText.setText(resultText.getText() + "\n开始转换" + srcFile.getName());
+            DWG2SVGConverter converter = new DWG2SVGConverter(srcFile.getAbsolutePath(),
+                    outDir + File.separator + srcFile.getName() + ".svg", Resolution.RESOLUTION_1920_1080);
+            converter.build();
+            resultText.setText(resultText.getText() + "\n完成转换" + srcFile.getName());
         }).start();
     }
 }

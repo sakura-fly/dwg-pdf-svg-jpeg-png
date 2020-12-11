@@ -56,7 +56,7 @@ public class DWG2SVGConverter extends AbstractSVGConverter {
             ex.printStackTrace();
         }
     }
-    final public void buildSvgWithMaker() {
+    final public void build() {
         try {
             Document doc = getSvgDocument();
             saveSvg(doc);
